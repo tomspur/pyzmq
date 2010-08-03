@@ -30,7 +30,12 @@ from distutils.extension import Extension
 
 from unittest import TextTestRunner, TestLoader
 from glob import glob
-from os.path import splitext, basename, join as pjoin, walk
+from os.path import splitext, basename, join as pjoin
+
+try:
+    from os import walk
+except ImportError:
+    from os.path import walk
 
 
 #-----------------------------------------------------------------------------
